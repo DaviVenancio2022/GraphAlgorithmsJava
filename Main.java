@@ -17,9 +17,9 @@ class Main {
     g1.degree(1);
 
     System.out.println(g1.degree(0));
-    System.out.println(g1.degree(0));
-    System.out.println(g1.degree(0));
-    System.out.println(g1.degree(0));
+    System.out.println(g1.degree(2));
+    System.out.println(g1.degree(1));
+    System.out.println(g1.degree(1));
   }
   
 }
