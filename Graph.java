@@ -44,7 +44,7 @@ public class Graph {
     if(node> this.countNodes -1)
       System.out.println("Invalid node!\n\n");
     
-    int degree= 0
+    int degree= 0;
       
     for(int j= 0; j< this.adjMatrix.length; ++j) {
       if(this.adjMatrix[node][j] != 0) {
