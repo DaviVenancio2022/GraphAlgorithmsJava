@@ -1,6 +1,6 @@
 public class Graph {
 
-	private int countNodes;
+    private int countNodes;
     private int countEdges;
     private int [][] adjMatrix;
 
