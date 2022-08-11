@@ -33,14 +33,12 @@ public class Graph {
     }
 
     public void addEdge(int source, int sink, int weight) {
-        if(source < 0 || source > this.countNodes -1
-	   || sink < 0 || sink > this.countNodes -1
-	   || weight <= 0) {
-	      System.err.println("Invalid adge: " + " " + source + " " 	+ sink + " " + weight);
-		return;
-	 }
-	    this.adjMatrix[source][sink] = weight;
-	    this.countEdges++;
+        if(source < 0 || source > this.countNodes -1 || sink < 0 || sink > this.countNodes -1 || weight <= 0) {
+	    System.err.println("Invalid adge: " + " " + source + " " + sink + " " + weight);
+	    return;
+	}
+	this.adjMatrix[source][sink] = weight;
+	this.countEdges++;
     }
   
     public int degree(int node) {
