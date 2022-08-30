@@ -88,5 +88,8 @@ class Main {
 		System.out.println("\n---------------------------------------------");
 		System.out.println("\nLista de adjascencia/busca em profundidade: ");
 		System.out.println(g3.dfs(6)); // Inicializaçao da busca s=6
+		System.out.println("\n---------------------------------------------");
+		System.out.println("\nGrafo g3 e orientado? ");
+		System.out.println(g3.nonOriented()); // Inicializaçao da busca s=6
 	}
 }
