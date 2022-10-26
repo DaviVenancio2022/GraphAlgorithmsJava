@@ -1,3 +1,12 @@
 {
-  "files": {}
+  "files": {
+    "maze3.txt": [
+      {
+        "id": "4bbc2f7a-65e7-4152-974b-2712290eb506",
+        "line": 1,
+        "version": 13,
+        "index": 0
+      }
+    ]
+  }
 }

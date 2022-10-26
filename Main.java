@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.util.Scanner;
 
 class Main {
 
@@ -49,7 +50,7 @@ class Main {
 	    System.out.println("g3 e subgrafo de g1? " + g1.subGraph(g3)); // false
 		System.out.println("\nDensidade de g3: \n" + g3.density());
     }
-	*/
+	
 		Graph g1 = new Graph(9); // nos= 9
 		g1.addEdgeUnoriented(7, 5, 1);
 		g1.addEdgeUnoriented(7, 1, 1);
@@ -71,7 +72,7 @@ class Main {
 
 		System.out.println("\n---------------------------------------------");
 		System.out.println("\nGrafo g2 txt:\n");
-		Graph g2 = new Graph("Graph.txt");
+		Graph g2 = new Graph("Graph2.txt");
 		System.out.println(g2);
 
 		System.out.println("\n---------------------------------------------");
@@ -91,5 +92,69 @@ class Main {
 		System.out.println("\n---------------------------------------------");
 		System.out.println("\nGrafo g3 e orientado? ");
 		System.out.println(g3.nonOriented()); // Inicializaçao da busca s=6
+		System.out.println("\n---------------------------------------------");
+		Graph g4 = new Graph(4);
+		g3.addEdgeUnoriented(0, 1, 1);
+		g3.addEdgeUnoriented(0, 2, 6);
+		g3.addEdgeUnoriented(1, 2, 4);
+		g3.addEdgeUnoriented(2, 1, 3);
+		System.out.println(g4);
+		System.out.println("\n---------------------------------------------");
+		Graph g5 = new Graph("Graph5.txt");
+		System.out.println("\nGrafo g5 txt:\n");
+		System.out.println(g5);
+		g5.floid_warshall(1,2);
+		System.out.println("\n---------------------------------------------");
+		Graph g6 = new Graph("Graph6.txt");
+		System.out.println("\nGrafo g6 txt:\n");
+		System.out.println(g6);
+		g6.floid_warshall(0, 3);
+
+		Scanner teclado; 
+		teclado = new Scanner(System.in);
+		int opc, orig, dest;
+		String arq;
+		
+		do {
+			System.out.println("\n1 - Caminho Minimo: ");
+			System.out.println("2 - Labirinto: ");
+			System.out.println("3 - Sair: ");
+			System.out.println("\nInforme a tarefa: ");
+			opc = teclado.nextInt();
+	
+			if(opc == 1) {
+				System.out.print("\nArquivo: ");
+				arq = teclado.next();
+				System.out.print("\nOrigem: ");
+				orig = teclado.nextInt();
+				System.out.print("\nDestino: ");
+				dest = teclado.nextInt();
+	
+				long tempoInicial = System.currentTimeMillis();
+	        	GraphMatrix.Labirinto(arq);
+				System.out.print("Arquivo: ");
+				System.out.print(arq);
+		        long tempoFinal = System.currentTimeMillis();
+				System.out.print("\nTempo em milisegundos: "); 
+				System.out.print(tempoFinal-tempoInicial);
+				System.out.println("\n\n---------------------------------------------");
+			}else if(opc == 3) {
+				System.out.println("\n---------------------------------------------");
+				System.out.println("\nFim do Programa! ");
+				break;
+			}
+				
+		}while(opc!= 3);
+	}
+	*/
+	System.out.println("\n---------------------------------------------");
+		long tempoInicial = System.currentTimeMillis();
+		Graph g6 = new Graph("USA-road-dt.DC.txt");
+		System.out.println("\nGrafo g6 txt:\n");
+		System.out.println(g6);
+		g6.floid_warshall(1, 5);
+		long tempoFinal = System.currentTimeMillis();
+		System.out.print("\nTempo em milisegundos: "); 
+		System.out.print(tempoFinal-tempoInicial);
 	}
 }
